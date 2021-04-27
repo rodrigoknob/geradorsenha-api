@@ -3,6 +3,8 @@ package com.gerador_senhas.api_rest.resources;
 import java.util.Date;
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -72,8 +74,9 @@ public class SenhaResource {
 	}
 
 	@DeleteMapping("/senhas")
+	@Transactional
 	public void zerarSenhas() {
-		senhaRepository.deleteAll();
+		senhaRepository.zerarSenhas();
 	}
 
 	@PutMapping("/senhas")

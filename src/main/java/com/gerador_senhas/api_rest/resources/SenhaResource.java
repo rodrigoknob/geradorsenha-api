@@ -32,11 +32,15 @@ public class SenhaResource {
 	@GetMapping("/senha")
 	public String listaSenhaAtual() {
 		Senha senhaClass = senhaRepository.findBySituacao("ATENDENDO");
-
+		
+		if(senhaClass == null) {
+			return "";
+		}
+		
 		return senhaClass.getSenhaFromatada();
 	}
 
-	@PutMapping("/proximaSenha")
+	@PostMapping("/proximaSenha")
 	public Senha proximaSenha() {
 		List<Senha> proximasSenhas = senhaRepository.findProximaSenha();
 
@@ -52,7 +56,7 @@ public class SenhaResource {
 
 		Senha proximaSenha = proximasSenhas.get(0);
 		proximaSenha.setSituacao("ATENDENDO");
-
+		
 		senhaRepository.save(proximaSenha);
 
 		return proximaSenha;

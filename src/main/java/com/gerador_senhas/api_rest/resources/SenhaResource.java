@@ -39,7 +39,7 @@ public class SenhaResource {
 			return "";
 		}
 		
-		return senhaClass.getSenhaFromatada();
+		return senhaClass.getSenhaFormatada();
 	}
 
 	@PostMapping("/proximaSenha")

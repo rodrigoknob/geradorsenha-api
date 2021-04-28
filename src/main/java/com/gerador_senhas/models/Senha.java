@@ -24,7 +24,7 @@ public class Senha implements Serializable {
 	private String tipo;
 
 	private String situacao;
-
+	
 	private Date data_geracao;
 
 	public Date getData_geracao() {
@@ -59,11 +59,10 @@ public class Senha implements Serializable {
 		this.situacao = situacao;
 	}
 
-	public String getSenhaFromatada() {
+	public String getSenhaFormatada() {
 		String senha = String.format("%04d", this.getId());
 		
 		return this.getTipo() + senha;
-
 	}
 
 }

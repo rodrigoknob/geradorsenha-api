@@ -10,7 +10,7 @@ para baixar a imagem postgres
 
 para criar o docker postgres
 
-### ` docker run --name postgres -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres`
+### `docker run --name postgres -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres`
 
 para executar o docker postgres
 
@@ -24,7 +24,7 @@ create database gerenciador_senha;
 
 ### `caso não executar por docker`
 
-crie um banco de dados com o nome: gerenciador_senha;
+crie um banco de dados postgres com o nome: gerenciador_senha;
 
 e coloque ele para rodar na porta 5432:5432
 
